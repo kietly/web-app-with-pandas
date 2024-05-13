@@ -1,6 +1,11 @@
 allow_embedding: false
-package_name: Material_Design_1
-name: Material Design 1
+package_name: web_app_with_pandas
+startup: null
+name: web-app-with-pandas
 startup_form: Form1
 runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
-services: []
+metadata: {title: web-app-with-panda, description: web pandas tutorial}
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
