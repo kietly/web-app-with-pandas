@@ -1,11 +1,33 @@
-allow_embedding: false
-package_name: web_app_with_pandas
-startup: null
-name: web-app-with-pandas
-startup_form: Form1
-runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
-metadata: {title: web-app-with-panda, description: web pandas tutorial}
 services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
+- source: /runtime/services/anvil/files.yml
+  client_config: {}
+  server_config: {file_table: files}
+startup: null
+package_name: web_app_with_pandas
+allow_embedding: false
+name: web-app-with-pandas
+runtime_options:
+  version: 2
+  client_version: '3'
+  server_version: python3-full
+  server_spec: {base: python310-standard}
+metadata: {title: web-app-with-panda, description: web pandas tutorial}
+startup_form: Form1
+db_schema:
+  files:
+    client: none
+    server: full
+    columns:
+    - name: path
+      admin_ui: {order: 0, width: 200}
+      type: string
+    - name: file
+      admin_ui: {order: 1, width: 200}
+      type: media
+    - name: file_version
+      admin_ui: {order: 2, width: 200}
+      type: string
+    title: Files
