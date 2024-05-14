@@ -13,4 +13,7 @@ class Form1(Form1Template):
     self.init_components(**properties)
 
     # Any code you write here will run before the form opens.
-    anvil.server.call('explore')
+    fig1,fig2,fig3 = anvil.server.call('create_plots')
+    self.plot_1.figure = fig1
+    self.plot_2.figure = fig2
+    self.plot_3.figure = fig3
